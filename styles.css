@@ -5,24 +5,33 @@
     box-sizing: border-box;
 }
 
-/* Basic styling */
+/* Basic styling for body and fonts */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
+/* Container to center content and control width */
 .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* Header styling */
 header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure header stays on top of other content */
 }
 
 header h1 {
@@ -36,48 +45,60 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2em;
+    transition: all 0.3s ease;
 }
 
-main {
-    padding: 20px 0;
+nav ul li a:hover {
+    color: #ffd700; /* Change color on hover */
+}
+
+/* Main sections styling */
+.main-content {
+    margin-top: 80px; /* Adjust for fixed header */
+    padding-bottom: 20px; /* Space at the bottom */
 }
 
 .section {
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
 .section h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
+.section p {
+    font-size: 1.1em;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* About section styling */
 .about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.about-text {
-    max-width: 600px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Adjust size of profile picture */
+    height: 200px;
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Maintain aspect ratio */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
+/* Skills section styling */
 .skills-list {
     list-style-type: none;
     text-align: center;
@@ -87,30 +108,48 @@ main {
     display: inline-block;
     background-color: #333;
     color: #fff;
-    padding: 8px 16px;
-    margin: 5px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
 }
 
+/* Portfolio section styling */
 .portfolio-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 30px;
+    justify-content: center;
 }
 
 .portfolio-item {
     background-color: #fff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .portfolio-item img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05); /* Scale up image on hover */
+}
+
+.portfolio-item h3 {
+    font-size: 1.5em;
     margin-bottom: 10px;
 }
 
+.portfolio-item p {
+    font-size: 1em;
+}
+
+/* Contact section styling */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -118,37 +157,47 @@ main {
 
 .contact-form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
 }
 
 .contact-form button {
-    padding: 10px 20px;
+    padding: 12px 30px;
     background-color: #333;
     color: #fff;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #555;
+    background-color: #555; /* Darken button on hover */
 }
 
+/* Footer styling */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
+    padding: 15px 0;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
+
