@@ -1,1 +1,1 @@
-// Optional: Add JavaScript functionality if needed
+// Optional: Add JavaScript functionality here, such as form submission handling or animations
